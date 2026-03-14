@@ -1,0 +1,12 @@
+const simulatedResults = ["Player","Banker","Banker","Player","Tie","Player"];
+// Example logic inside Extract Results Function Node
+const cheerio = require('cheerio');
+const html = items[0].json.body; // assuming body contains raw HTML string
+const $ = cheerio.load(html);
+
+const results = [];
+$('.bacbo-result').each((i, el) => {
+  results.push($(el).text().trim());
+});
+
+return [{ json: { results } }];
